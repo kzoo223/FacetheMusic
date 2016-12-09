@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Face the Music</title>
+  <!-- reset CSS  -->
+  <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+    
+  <!-- Google fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Mogra" rel="stylesheet">
+    
+  <!-- Added link to the jQuery Library -->
+  <script src="https://code.jquery.com/jquery-2.2.3.js" integrity="sha256-laXWtGydpwqJ8JA+X9x2miwmaiKhn8tVmOVEigRNtP4=" crossorigin="anonymous"></script>
+  
+  <!-- Added a link to Bootstrap-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+  <!-- Boot strap js -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    
+  <!-- style sheet -->
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
+  <!-- Firebase Reference -->
+  <script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
+
+
+  <!-- Spotify Web API -->
+  <script src="assets/javascript/spotify-web-api.js"></script>
+
+  
+  <script src="assets/javascript/spotify.js"></script>
+
+  <script type="text/javascript">
+    (function(a){if(window.filepicker){return}var b=a.createElement("script");b.type="text/javascript";b.async=!0;b.src=("https:"===a.location.protocol?"https:":"http:")+"//api.filestackapi.com/filestack.js";var c=a.getElementsByTagName("script")[0];c.parentNode.insertBefore(b,c);var d={};d._queue=[];var e="pick,pickMultiple,pickAndStore,read,write,writeUrl,export,convert,store,storeUrl,remove,stat,setKey,constructWidget,makeDropPane".split(",");var f=function(a,b){return function(){b.push([a,arguments])}};for(var g=0;g<e.length;g++){d[e[g]]=f(e[g],d._queue)}window.filepicker=d})(document);
+  </script>
+
+  <script src="assets/javascript/logic.js"></script>
+
+  <script src="assets/javascript/emotive.js"></script>
+
+  <script src = "assets/javascript/app.js" type="text/javascript"> </script>
+
+  </head>
+
+  
+
+<body>
+  <div class = "container text-center">
+
+    <!-- Login Modal -->
+    <div class="modal fade" id = 'loginModal' tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+
+            <h4 class="modal-title">Log In</h4>
+          </div>
+          <div class="modal-body">
+            <input id="txtEmail" type="email" placeholder="email">
+            <input id="txtPassword"  type="password" placeholder="password">
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+            <button type="button" id='btnSubmitLogin' class="btn btn-primary">Login</button>
+            <div class="errMsgSignUp"></div>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+    <!-- Signup Modal -->
+    <div class="modal fade" id = 'signupModal' tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            
+            <h4 class="modal-title">Sign Up</h4>
+          </div>
+          <div class="modal-body">
+            <input id="txtSignupUser" type="text" placeholder="User Name">
+            <input id="txtSignupEmail" type="email" placeholder="email">
+            <input id="txtSignupPassword"  type="password" placeholder="password">
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+            <button type="button" id='btnSubmitSignup' class="btn btn-primary">Sign Up</button>
+            <div class="errMsgSignUp"></div>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+    <!-- Emotive Error Modal -->
+    <div class="modal fade" id = 'emotiveModal' tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            
+            <h4 class="modal-title">Sorry! </h4>
+          </div>
+          <div class="modal-body">
+          We couldn't read that image. Here's one of your best friend Tom instead.
+          </div>
+          <div class="modal-footer">
+            <button type="button" data-dismiss='modal' class="btn btn-primary">OK</button>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+    <!-- Spotify Modal -->
+    <div class="modal fade" id = 'spotifyModal' tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+        
+            <h4 class="modal-title">Connect to Spotify </h4>
+          </div>
+          <div class="modal-body">
+            Our app uses Spotify for awesome. Connect now!
+          </div>
+          <div class="modal-footer">
+            <button type="button" id='spotifyConnect' data-dismiss='modal' class="btn btn-primary">Connect to Spotify</button>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+
+
+
+
+    <!--logo row-->
+    <div class = "row text-center" id = "logoArea">
+    <div class = "col-lg-12" id = "logoDiv"><img src='assets/images/ftmlogo.jpg'></div>
+    </div>
+    
+    <br>
+    
+    
+    <!--content row-->
+    <div class = "row" id = "picUpload">
+      
+
+      <div class = "col-lg-6 content" id = "left" >
+      <!-- Login that will show/hide based on credentials -->
+        <div class="col-lg-4 col-lg-offset-4" id='loginDiv'>
+          <button id = 'btnLogin' class = 'btn btn-primary'>Login</button>
+          <button id = 'btnSignup' class = 'btn btn-primary'>Sign Up</button>
+        </div>
+          <!-- Login that will show/hide based on credentials -->
+        <!-- <form id="picForm"> -->
+          <div id = 'previewPic' class="form-group text-center">
+              
+              <!-- Senthil added to show the image -->
+              <!-- <img src="" height="200" class="uploadImage"> -->
+              <p class="help-block"></p>
+             <!--  <input id='filepicker' type="filepicker" data-fp-apikey="AQJ6QdJrISSSWI7qBzBDCz" data-fp-mimetypes="*/*" data-fp-container="modal" data-fp-store-location="s3" onchange="previewFile(event.fpfile.url)">  -->
+
+             <input id='filepicker' type="filepicker" data-fp-mimetypes="*/*" data-fp-container="modal" data-fp-store-location="s3"> 
+          </div>
+        <!-- </form> -->
+      </div>
+      
+      <div class = "col-lg-6 text-center content" id ="playlists"></div>
+      </div>
+
+    <br>
+    <!--bottom row-->
+    <div class = "row">
+      <div class = "col-lg-12" id ="bottom"><img src='assets/images/Bottom.jpg'></div>
+      </div>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,103 @@
+body
+{
+  background-color: black;
+  background: url(../images/lights.jpg);
+  color:white;
+}
+
+.modal-header, .modal-footer {
+  background: black;
+}
+
+.modal-body {
+  color: black;
+}
+
+#loginDiv {
+
+  position: absolute;
+  top: 45%;
+}
+
+
+.content
+{
+  height: 5 50px;
+  max-width:95%;
+  border: solid white 1px;
+}
+
+#left 
+{
+  background: url("../images/background.jpg");
+}
+
+#filepicker {
+  position: absolute;
+  top: 85%;
+}
+
+#previewPic img {
+  max-height: 75%;
+  max-width: 75%;
+  margin-top: 20px;
+}
+
+#playlists
+{
+  background: url("../images/background2.jpg");
+
+}
+
+#playlists iframe {
+
+  margin-top: 35px;
+}
+
+
+#logoDiv
+{
+  /*background: url("../images/ftmlogo.jpg") no-repeat;*/
+  min-height: 250px;
+  max-width:100%;
+  padding: 0;
+  margin-top: 30px;
+  
+}
+
+#logoDiv img {
+  width: 100%;
+  border: solid white 1px;
+}
+
+
+#bottom
+{
+  /*background: url("../images/Bottom.jpg");*/
+  min-height: 200px;
+  max-width: 100%;
+  border: solid white 1px;
+  padding: 0;
+}
+
+#bottom img{
+  max-width: 100%;
+}
+
+.fp__btn {
+  background: #1FD55E;
+}
+
+.btn-primary {
+  background: #1FD55E  ;
+}
+
+.btn-primary:hover {
+  background: #159541;
+}
+
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active{
+    background: #159541;
+}
+
+
